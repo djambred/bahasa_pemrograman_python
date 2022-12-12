@@ -1,0 +1,21 @@
+version : '3'
+
+services:
+
+  mysqlpython:
+    image: mariadb:10.2
+    container_name: mysqlpython
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "23306:3306"
+    volumes:
+      - ./mariadb:/var/lib/mysql
+      - ./conf.d:/etc/mysql/conf.d:ro
+    environment:
+      MYSQL_USER: djambred
+      MYSQL_PASSWORD: p455w0rd1!.
+      MYSQL_ROOT_PASSWORD: p455w0rd
+      TZ: Asia/Jakarta
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql

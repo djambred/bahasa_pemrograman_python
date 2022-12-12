@@ -1,0 +1,6 @@
+1. INSTALL DOCKER DESKTOP DI LAPTOP MASING MASING
+2. KONEKSIKAN DOCKER DENGAN WSL
+3. INSTALL NAVICAT TOOLS DATABASE
+4. INSTALL pip dengan perintah apt install python3-pip
+5. DI TERMINAL WSL UBUNTU pip install mysql-connector-python
+6. SETELAH SETUP SEMUA DI FOLDER INI LAKUKAN docker-compose up -d --build

@@ -1,0 +1,7 @@
+# Variables in Python
+
+
+# PARADIGMA PEMOGRAMAN
+- FUNGSIONAL
+- PROSEDURAL
+- OOP
