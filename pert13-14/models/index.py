@@ -1,0 +1,1 @@
+from models.mahasiswas import mahasiswas
