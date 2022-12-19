@@ -25,3 +25,7 @@ jangan lupa centang Disable access control terus di next <br/>
 terus di finish aja langsung <br/>
 
 6. JIKA ADA YANG INGIN DITANYAKAN LANGSUNG HUBUNGI KETRIN di GROUP WAG BUKAN DI JAPRI TERIMA KASIH
+
+
+# UNTUK GRAPH
+pip install dash matplotlib numpy dash-bootstrap-components
