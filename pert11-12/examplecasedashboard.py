@@ -12,7 +12,7 @@ import dash_table
 app = dash.Dash(external_stylesheets = [ dbc.themes.FLATLY],)
 
 
-COVID_IMG = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbigredmarkets.com%2Fwp-content%2Fuploads%2F2020%2F03%2FCovid-19.png&f=1&nofb=1"
+#COVID_IMG = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbigredmarkets.com%2Fwp-content%2Fuploads%2F2020%2F03%2FCovid-19.png&f=1&nofb=1"
 
 
 url = "https://api.covid19api.com/summary"
@@ -106,12 +106,12 @@ def data_for_cases(header, total_cases, new_cases):
 
 body_app = dbc.Container([
 
-    dbc.Row( html.Marquee("USA, India and Brazil are top 3 countries in terms of confirmed cases"), style = {'color':'green'}),
+    dbc.Row( html.Marquee("Kunjungan Kapal Pesiar di Dunia"), style = {'color':'green'}),
 
     dbc.Row([
         dbc.Col(dbc.Card(data_for_cases("Confirmed",f'{confirmed:,}',f'{newconfirmed:,}' ), color = 'primary',style = {'text-align':'center'}, inverse = True),xs = 12, sm = 12, md = 4, lg = 4, xl = 4, style = {'padding':'12px 12px 12px 12px'}),
-        dbc.Col(dbc.Card(data_for_cases("Recovered",f'{recovered:,}',f'{newrecovered:,}' ), color = 'success',style = {'text-align':'center'}, inverse = True),xs = 12, sm = 12, md = 4, lg = 4, xl = 4, style = {'padding':'12px 12px 12px 12px'}),
-        dbc.Col(dbc.Card(data_for_cases("Deaths",f'{deaths:,}',f'{newdeaths:,}' ), color = 'danger',style = {'text-align':'center'}, inverse = True),xs = 12, sm = 12, md = 4, lg = 4, xl = 4, style = {'padding':'12px 12px 12px 12px'})
+        dbc.Col(dbc.Card(data_for_cases("Suspend",f'{recovered:,}',f'{newrecovered:,}' ), color = 'success',style = {'text-align':'center'}, inverse = True),xs = 12, sm = 12, md = 4, lg = 4, xl = 4, style = {'padding':'12px 12px 12px 12px'}),
+        dbc.Col(dbc.Card(data_for_cases("Cancel",f'{deaths:,}',f'{newdeaths:,}' ), color = 'danger',style = {'text-align':'center'}, inverse = True),xs = 12, sm = 12, md = 4, lg = 4, xl = 4, style = {'padding':'12px 12px 12px 12px'})
 
 
         ]),
@@ -119,7 +119,7 @@ body_app = dbc.Container([
     html.Br(),
     html.Br(),
 
-    dbc.Row([html.Div(html.H4('Covid-19 Worldwide Impact'),
+    dbc.Row([html.Div(html.H4('List Kunjungan'),
                       style = {'textAlign':'center','fontWeight':'bold','family':'georgia','width':'100%'})]),
 
     html.Br(),
@@ -149,9 +149,9 @@ navbar = dbc.Navbar( id = 'navbar', children = [
 
     html.A(
     dbc.Row([
-        dbc.Col(html.Img(src = COVID_IMG, height = "70px")),
+        #dbc.Col(html.Img(src = COVID_IMG, height = "70px")),
         dbc.Col(
-            dbc.NavbarBrand("Covid-19 Live Tracker", style = {'color':'black', 'fontSize':'25px','fontFamily':'Times New Roman'}
+            dbc.NavbarBrand("BPKS Live Tracker Kunjungan Kapal Pesiar", style = {'color':'black', 'fontSize':'25px','fontFamily':'Times New Roman'}
                             )
 
             )
@@ -167,7 +167,7 @@ navbar = dbc.Navbar( id = 'navbar', children = [
             [
         dbc.Col(
 
-            dbc.Button(id = 'button', children = "Support Us", color = "primary", className = 'ml-auto', href = '/')
+            #dbc.Button(id = 'button', children = "Support Us", color = "primary", className = 'ml-auto', href = '/')
 
             )        
     ],
@@ -194,7 +194,7 @@ def table_country(country):
         df_final = df_countries.loc[df_countries['Country'] == '{}'.format(country)]
 
     return dash_table.DataTable(
-    data = df_final[['Country','TotalConfirmed','TotalRecovered','TotalDeaths']].to_dict('records'),
+    data = df_final[['Country','TotalConfirmed','TotalSuspend','TotalCancel']].to_dict('records'),
     columns = [{'id':c , 'name':c} for c in df_final[['Country','TotalConfirmed','TotalRecovered','TotalDeaths']].columns],
     fixed_rows = {'headers':True},
 
