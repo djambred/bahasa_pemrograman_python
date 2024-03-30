@@ -74,6 +74,15 @@ ketikkan ./test (untuk running c++)
 ketikkan python3 python.py 
 
 
+buka terminal ubuntunya 
+ketikkan cd bp/pert1
+
+lakukan perintah 
+git add .
+git commit -m "perubahan"
+git push -u origin main
+
+
 
 
 
